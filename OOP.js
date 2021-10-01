@@ -1,3 +1,44 @@
+class Person {
+    constructor (firstName, lastName) {
+        console.log("Initializing person fields");
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    toString() {
+        return `name: ${this.firstName} ${this.lastName}`;
+    }
+
+    get fullName() { return `${this.firstName} ${this.lastName}`;}
+
+    get surname() {return this.lastName;}
+}
+
+
+class ReputablePerson extends Person {
+    constructor(firstName, lastName, rating) {
+        console.log("Creating a reputable person");
+        super(firstName, lastName);
+        this.rating = rating;
+    }
+
+    toString() {
+        return `${super.toString()}, Rating: ${this.rating}}`;
+    }
+
+    get fullName() {
+        return `Reputed ${this.surname} ${super.fullName}`;
+    }
+}
+
+
+
+
+
+
+
+// 28th Sep 2021
+
 const names = new Set(["James", "Harry", "Harry", "Phyllis", "Mugo", "Isaac"])
 
 const MAX = 10000000;
@@ -9,7 +50,7 @@ for(let i = 0; i <= MAX; i++) {
     mapa.set(key, i);
 }
 
-console.log("Done");
+// console.log("Done");
 
 function addScores(names) {
     const scores = new Map();
