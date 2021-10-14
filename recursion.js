@@ -1,4 +1,32 @@
 /**
+ * Quick sort
+
+let list = [12, 5, 6, 7, 8, 6.8, 9, 13, 23, 44.4, 0, 33, 4];
+
+function quickSort(array) {
+	if (array.length <= 1) {
+		return array; //Already sorted
+	} 
+	
+	let pivot = array[array.length - 1];
+	let rightArray = [];
+	let leftArray = [];
+
+	for(const el of array.slice(0, array.length-1)){
+		el > pivot? rightArray.push(el): leftArray.push(el);
+	}
+
+	return [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
+
+		
+	
+}
+
+console.log(quickSort(list));
+
+*/
+
+/**
  * 
  * Find largest number
  * 
@@ -32,8 +60,6 @@ const summa = function (array) {
 
 console.log(summa([3, 4, 5, 12, 12, 12, 2, 4, 5, 6, 7, 8, 9, 0, 9]));
 */
-
-
 
 // // Countdown to zero
 
