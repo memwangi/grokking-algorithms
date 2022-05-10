@@ -1,15 +1,16 @@
 import "./App.css";
 import { VStack, Button, HStack, Text } from "@chakra-ui/react";
+import {useState} from 'react'
 
 function App() {
-	let count = 0;
+	
+  const [count, setCount] = useState(0)
+
 	const onClick = () => {
-		console.log("clicked", count);
-		count = count + 1;
+		console.log("clicked", count + 1);
+		setCount(count + 1)
 	};
 
-	console.log("updated", count);
-  
 	return (
 		<VStack width={"100vw"} height={"100vh"} justifyContent={"center"}>
 			<HStack spacing={8}>
